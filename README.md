@@ -14,7 +14,7 @@ A mail security gateway may wrap or rewrite a destination URL so it can scan the
 4. Treat the decoded destination as untrusted. If investigation requires visiting it, use your organisation's approved isolated analysis environment and procedures.
 5. Preserve the original wrapped URL, decoded destination, message context, and timestamp in the case record. Avoid posting private or tokenised links in public issue trackers or chat rooms.
 
-A decoded URL is an inspection aid, not a verdict. Confirm the sender and business context through a known channel, and do not enter credentials into a page reached from an unexpected message.
+A decoded URL is an inspection aid, not a verdict. Confirm the sender and business context through a known channel, and do not enter credentials into a page reached from an unexpected message. For examples of common wrapper formats, see [How to decode email security links](https://thehackerroom.com/blog/how-to-decode-email-security-links/).
 
 ## 2. Record a CVSS assessment
 
@@ -26,7 +26,7 @@ CVSS communicates vulnerability severity. It does not, by itself, calculate the 
 4. Save the full vector string, score, version, source, and assessment date. The vector is essential context for reproducing the score.
 5. Add local prioritisation separately: exposure, reachable attack surface, active exploitation evidence, asset importance, mitigations, and remediation options. These can change operational priority without changing the published CVSS score.
 
-The [CVSS Calculator](https://thehackerroom.com/tools/cvss-calculator/) supports CVSS 4.0 and 3.1. It can set metrics, accept a vector, or look up a CVE for its NVD vector, KEV status, and EPSS score. Check the resulting version and vector before copying them into a ticket or report.
+The [CVSS Calculator](https://thehackerroom.com/tools/cvss-calculator/) supports CVSS 4.0 and 3.1. It can set metrics, accept a vector, or look up a CVE for its NVD vector, KEV status, and EPSS score. Check the resulting version and vector before copying them into a ticket or report. For a side-by-side explanation with scored examples, see [CVSS 3.1 vs 4.0](https://thehackerroom.com/blog/cvss-31-vs-40/).
 
 ### Metric groups differ by version
 
@@ -48,15 +48,13 @@ The [CVSS Calculator](https://thehackerroom.com/tools/cvss-calculator/) supports
 
 ## 3. Screen an organisation for NIS2 scope
 
-The [NIS2 Scope Checker](https://thehackerroom.com/tools/nis2-scope-checker/) walks through jurisdiction, activity/sector, organisation size, and specified exceptions, and shows which rule determined its screening result. The page says the answers stay in the browser and are not uploaded.
+The [NIS2 Scope Checker](https://thehackerroom.com/tools/nis2-scope-checker/) walks through jurisdiction, activity/sector, organisation size, and specified exceptions, and shows which rule determined its screening result. The page says the answers stay in the browser and are not uploaded. Use it as an initial screen. It cannot account for every national implementation, group structure, or sector-specific edge case. Confirm a borderline or consequential result against the applicable national law and regulator guidance, and seek qualified legal advice where needed. The checker itself says it is not legal advice.
 
-Use it as an initial screen. It cannot account for every national implementation, group structure, or sector-specific edge case. Confirm a borderline or consequential result against the applicable national law and regulator guidance, and seek qualified legal advice where needed. The checker itself says it is not legal advice.
+For an operational readiness checklist, see [NIS2 compliance checklist](https://thehackerroom.com/blog/nis2-compliance-checklist/). For adjacent organisational security context, the [Shadow AI field guide](https://thehackerroom.com/blog/shadow-ai-field-guide/) covers risks from unapproved AI tools; it is not a NIS2 scope assessment.
 
 ## 4. Check the CISA Known Exploited Vulnerabilities catalog
 
-The [CISA KEV Tracker](https://thehackerroom.com/tools/kev-tracker/) searches catalog entries by CVE, vendor, or product and can filter for recent additions or entries associated with ransomware use. Use KEV presence as an actionable signal in vulnerability triage, then check the original CISA entry, affected-version details, and remediation guidance.
-
-A CVE not appearing in KEV does not prove it has never been exploited or that it is safe to defer. Combine the catalog with asset exposure, vendor advisories, threat intelligence, and local impact. The site links each CVE to its NVD record and the CVSS calculator.
+The [CISA KEV Tracker](https://thehackerroom.com/tools/kev-tracker/) searches catalog entries by CVE, vendor, or product and can filter for recent additions or entries associated with ransomware use. Use KEV presence as an actionable signal in vulnerability triage, then check the original CISA entry, affected-version details, and remediation guidance. A CVE not appearing in KEV does not prove it has never been exploited or that it is safe to defer. Combine the catalog with asset exposure, vendor advisories, threat intelligence, and local impact. The site links each CVE to its NVD record and the CVSS calculator. For background on what the catalog does and does not mean, see [CISA KEV explained](https://thehackerroom.com/blog/cisa-kev-explained/).
 
 ## Primary references
 
@@ -68,14 +66,3 @@ A CVE not appearing in KEV does not prove it has never been exploited or that it
 - [NIS2 Directive (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj)
 
 Corrections and practical improvements are welcome. When suggesting changes, include an official reference or reproducible evidence that supports them.
-
-
-## Related Hacker Room guides
-
-For more detailed explanations and worked examples, see these companion resources:
-
-- [CISA KEV explained](https://thehackerroom.com/blog/cisa-kev-explained/) — how to interpret the catalog and use it in vulnerability triage.
-- [CVSS 3.1 vs 4.0: what changed, with scored examples](https://thehackerroom.com/blog/cvss-31-vs-40/) — compare metric changes and example vectors.
-- [NIS2 compliance checklist](https://thehackerroom.com/blog/nis2-compliance-checklist/) — a practical checklist to use alongside the scope-screening notes above.
-- [Shadow AI field guide](https://thehackerroom.com/blog/shadow-ai-field-guide/) — security considerations for identifying and governing unsanctioned AI use.
-- [How to decode email security links](https://thehackerroom.com/blog/how-to-decode-email-security-links/) — formats, examples, and a safe analyst workflow.
