@@ -68,3 +68,14 @@ A CVE not appearing in KEV does not prove it has never been exploited or that it
 - [NIS2 Directive (EU) 2022/2555](https://eur-lex.europa.eu/eli/dir/2022/2555/oj)
 
 Corrections and practical improvements are welcome. When suggesting changes, include an official reference or reproducible evidence that supports them.
+
+
+## Related Hacker Room guides
+
+For more detailed explanations and worked examples, see these companion resources:
+
+- [CISA KEV explained](https://thehackerroom.com/blog/cisa-kev-explained/) — how to interpret the catalog and use it in vulnerability triage.
+- [CVSS 3.1 vs 4.0: what changed, with scored examples](https://thehackerroom.com/blog/cvss-31-vs-40/) — compare metric changes and example vectors.
+- [NIS2 compliance checklist](https://thehackerroom.com/blog/nis2-compliance-checklist/) — a practical checklist to use alongside the scope-screening notes above.
+- [Shadow AI field guide](https://thehackerroom.com/blog/shadow-ai-field-guide/) — security considerations for identifying and governing unsanctioned AI use.
+- [How to decode email security links](https://thehackerroom.com/blog/how-to-decode-email-security-links/) — formats, examples, and a safe analyst workflow.
